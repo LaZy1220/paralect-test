@@ -10,7 +10,7 @@ export const Filters = () => {
         <h3 className={styles.title}>Фильтры</h3>
         <div className={styles.reset}>
           <span className={styles["reset-text"]}>Сбросить всё</span>
-          <img src={Cross} alt="cross" />
+          <img className={styles.cross} src={Cross} alt="cross" />
         </div>
         <Industry />
         <Salary />

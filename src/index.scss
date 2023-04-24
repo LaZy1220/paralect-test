@@ -22,15 +22,6 @@ body {
   --poppins: "Poppins", sans-serif;
   --inter: "Inter", sans-serif;
 }
-.home {
-  background-color: var(--background);
-  padding-top: 40px;
-  height: calc(100vh - 124px);
-}
-.favorites {
-  background-color: var(--background);
-  height: calc(100vh - 84px - 120px);
-}
 .center {
   display: flex;
   justify-content: center;
@@ -40,11 +31,4 @@ body {
 .column {
   display: flex;
   flex-direction: column;
-}
-.nothing {
-  padding-top: 120px;
-}
-.gap {
-  display: flex;
-  gap: 28px;
 }

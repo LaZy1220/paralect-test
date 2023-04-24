@@ -1,0 +1,14 @@
+.home {
+  background-color: var(--background);
+  padding-top: 40px;
+  height: calc(100vh - 124px);
+}
+.full-width {
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 315px - 28px);
+}
+.flex {
+  display: flex;
+}

@@ -10,7 +10,7 @@ export const Industry = () => {
           className={styles["filters-input"]}
           placeholder="Выберите отрасль"
         />
-        <img className={styles.cross} src={Arrow} alt="arrow" />
+        <img className={styles["big-arrow"]} src={Arrow} alt="arrow" />
       </div>
     </div>
   );
