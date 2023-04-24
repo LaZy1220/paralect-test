@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  color: var(--black);
+}
+:root {
+  --black: #232134;
+  --blue: #5e96fc;
+  --background: #f5f5f5;
+  --gray: #acadb9;
+  --poppins: "Poppins", sans-serif;
+  --inter: "Inter", sans-serif;
+}
+.container {
+  padding: 0 162px;
+}
