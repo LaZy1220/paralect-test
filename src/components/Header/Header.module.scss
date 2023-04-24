@@ -7,6 +7,8 @@
   position: absolute;
   left: 0;
   top: 24px;
+}
+.logo-title {
   font-weight: 600;
   font-size: 24px;
   line-height: 36px;
@@ -15,7 +17,6 @@
 .buttons {
   display: flex;
   gap: 60px;
-  font-family: var(--inter);
   padding: 32px 0;
 }
 .button {

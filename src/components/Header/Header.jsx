@@ -13,7 +13,7 @@ export const Header = () => {
         <div className="center">
           <div className={styles.logo}>
             <img src={Logo} alt="logo" />
-            <span>Jobored</span>
+            <span className={styles["logo-title"]}>Jobored</span>
           </div>
           <div className={styles.buttons}>
             <NavLink to="/" className={setActive}>

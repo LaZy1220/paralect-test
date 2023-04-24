@@ -5,12 +5,18 @@
   margin: 0;
   padding: 0;
   color: var(--black);
+  font-family: var(--inter);
+}
+body {
+  height: 100vh;
 }
 :root {
   --black: #232134;
   --blue: #5e96fc;
   --background: #f5f5f5;
-  --gray: #acadb9;
+  --gray: #d5d6dc;
+  --light-gray: #eaebed;
+  --dark-gray: #acadb9;
   --light-blue: #deecff;
   --light-black: #343a40;
   --poppins: "Poppins", sans-serif;
@@ -19,6 +25,7 @@
 .home {
   background-color: var(--background);
   padding-top: 40px;
+  height: calc(100vh - 124px);
 }
 .favorites {
   background-color: var(--background);
@@ -36,4 +43,8 @@
 }
 .nothing {
   padding-top: 120px;
+}
+.gap {
+  display: flex;
+  gap: 28px;
 }

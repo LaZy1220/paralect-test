@@ -5,9 +5,11 @@ export const Home = () => {
   return (
     <main className="home">
       <Container>
-        <Filters />
-        <div>Поиск</div>
-        <div>Вакансии</div>
+        <div className="gap">
+          <Filters />
+          <div>Поиск</div>
+          <div>Вакансии</div>
+        </div>
       </Container>
     </main>
   );
