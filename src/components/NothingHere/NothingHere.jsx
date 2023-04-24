@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import NothingHereImg from "../../assets/NothingHere.svg";
+import NothingHereImg from "../../assets/nothing-here.svg";
 import styles from "./NothingHere.module.scss";
 
 export const NothingHere = () => {

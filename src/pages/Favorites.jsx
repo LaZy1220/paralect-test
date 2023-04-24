@@ -5,8 +5,8 @@ import cn from "classnames";
 export const Favorites = () => {
   const test = null;
   return (
-    <div className={cn("favorites", { ["nothing"]: !test })}>
+    <main className={cn("favorites", { ["nothing"]: !test })}>
       <NothingHere />;
-    </div>
+    </main>
   );
 };

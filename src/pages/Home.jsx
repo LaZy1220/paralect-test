@@ -3,12 +3,12 @@ import { Filters } from "../components/Filters/Filters";
 
 export const Home = () => {
   return (
-    <div className="home">
+    <main className="home">
       <Container>
         <Filters />
         <div>Поиск</div>
         <div>Вакансии</div>
       </Container>
-    </div>
+    </main>
   );
 };

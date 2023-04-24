@@ -6,7 +6,7 @@ import { Container } from "../Container/Container";
 
 export const Header = () => {
   const setActive = ({ isActive }) =>
-    isActive ? styles.activeLink : styles.button;
+    isActive ? styles["active-link"] : styles.button;
   return (
     <header className={styles.header}>
       <Container>
