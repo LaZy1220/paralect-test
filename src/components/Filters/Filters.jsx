@@ -5,7 +5,6 @@ import { Salary } from "./Salary/Salary";
 import axios from "../../axios";
 
 export const Filters = () => {
-  const data = axios.get();
   return (
     <div className={styles.filters}>
       <div className={styles.body}>
@@ -16,7 +15,9 @@ export const Filters = () => {
         </div>
         <Industry />
         <Salary />
-        <button className={styles.button}>Применить</button>
+        <button data-elem="search-button" className={styles.button}>
+          Применить
+        </button>
       </div>
     </div>
   );

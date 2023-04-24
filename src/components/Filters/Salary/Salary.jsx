@@ -6,12 +6,20 @@ export const Salary = () => {
     <div className={styles.gap}>
       <h4 className={styles.subtitle}>Оклад</h4>
       <div className={styles.border}>
-        <input className={styles["filters-input"]} placeholder="От" />
+        <input
+          data-elem="salary-from-input"
+          className={styles["filters-input"]}
+          placeholder="От"
+        />
         <img src={Arrow} className={styles["arrow-up"]} alt="arrow" />
         <img src={Arrow} className={styles["arrow-down"]} alt="arrow" />
       </div>
       <div className={styles.border}>
-        <input className={styles["filters-input"]} placeholder="До" />
+        <input
+          data-elem="salary-to-input"
+          className={styles["filters-input"]}
+          placeholder="До"
+        />
         <img src={Arrow} className={styles["arrow-up"]} alt="arrow" />
         <img src={Arrow} className={styles["arrow-down"]} alt="arrow" />
       </div>

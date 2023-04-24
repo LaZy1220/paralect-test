@@ -7,6 +7,7 @@ export const Industry = () => {
       <h4 className={styles.subtitle}>Отрасль</h4>
       <div className={styles.border}>
         <input
+          data-elem="industry-select"
           className={styles["filters-input"]}
           placeholder="Выберите отрасль"
         />

@@ -7,10 +7,13 @@ export const Search = () => {
     <div className={styles.search}>
       <img className={styles["search-icon"]} src={SearchImg} alt="search" />
       <input
+        data-elem="search-input"
         className={styles["search-input"]}
         placeholder="Введите название вакансии"
       />
-      <button className={cn(styles.button)}>Поиск</button>
+      <button data-elem="search-button" className={cn(styles.button)}>
+        Поиск
+      </button>
     </div>
   );
 };
