@@ -1,7 +1,33 @@
 .search {
-  border: 1px solid var(--light-gray);
-  border-radius: 8px;
+  position: relative;
 }
 .search-input {
-  width: 100%;
+  width: calc(100% - 70px);
+  padding: 14px 35px 14px 35px;
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  &::placeholder {
+    color: var(--dark-gray);
+  }
+}
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 15px;
+}
+.button {
+  background: var(--blue);
+  border-radius: 8px;
+  color: #ffff;
+  border: none;
+  height: 30px;
+  width: 83px;
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    background-color: var(--dark-gray);
+  }
 }
