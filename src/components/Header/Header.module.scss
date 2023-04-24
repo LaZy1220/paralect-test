@@ -12,12 +12,6 @@
   line-height: 36px;
   font-family: var(--poppins);
 }
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
 .buttons {
   display: flex;
   gap: 60px;
@@ -29,10 +23,12 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
+  text-decoration: none;
 }
-.active {
+.activeLink {
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
   color: var(--blue);
+  text-decoration: none;
 }

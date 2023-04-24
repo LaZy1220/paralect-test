@@ -11,9 +11,28 @@
   --blue: #5e96fc;
   --background: #f5f5f5;
   --gray: #acadb9;
+  --light-blue: #deecff;
+  --light-black: #343a40;
   --poppins: "Poppins", sans-serif;
   --inter: "Inter", sans-serif;
 }
-.container {
-  padding: 0 162px;
+.home {
+  background-color: var(--background);
+}
+.favorites {
+  background-color: var(--background);
+  height: calc(100vh - 84px - 120px);
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.nothing {
+  padding-top: 120px;
 }

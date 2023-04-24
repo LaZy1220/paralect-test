@@ -1,12 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Home from "./pages/Home.jsx";
+import { Home } from "./pages/Home";
 import "./index.scss";
 import { Header } from "./components/Header/Header.jsx";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Favorites } from "./pages/Favorites";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Header />
-    <Home />
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/favorites" element={<Favorites />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );

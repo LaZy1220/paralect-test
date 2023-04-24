@@ -1,0 +1,23 @@
+.title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: var(--light-black);
+  padding: 32px 0;
+}
+.button {
+  width: 164px;
+  height: 42px;
+  background: var(--light-blue);
+  border: none;
+  border-radius: 8px;
+  color: var(--blue);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s;
+  &:hover {
+    background: var(--blue);
+    color: var(--light-blue);
+  }
+}

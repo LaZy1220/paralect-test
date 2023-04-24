@@ -1,38 +1,30 @@
 import { useState } from "react";
-import Logo from "../../../public/logo.svg";
+import Logo from "../../assets/logo.svg";
 import styles from "./Header.module.scss";
-import cn from "classnames";
+import { NavLink } from "react-router-dom";
+import { Container } from "../Container/Container";
 
 export const Header = () => {
-  const [activeButton, setActiveButton] = useState(1);
+  const setActive = ({ isActive }) =>
+    isActive ? styles.activeLink : styles.button;
   return (
     <header className={styles.header}>
-      <div className="container">
-        <div className={styles.flex}>
+      <Container>
+        <div className="center">
           <div className={styles.logo}>
-            <img src={Logo} alt="" />
+            <img src={Logo} alt="logo" />
             <span>Jobored</span>
           </div>
           <div className={styles.buttons}>
-            <span
-              onClick={() => setActiveButton(1)}
-              className={cn(styles.button, {
-                [styles.active]: activeButton === 1,
-              })}
-            >
+            <NavLink to="/" className={setActive}>
               Поиск Вакансий
-            </span>
-            <span
-              onClick={() => setActiveButton(2)}
-              className={cn(styles.button, {
-                [styles.active]: activeButton === 2,
-              })}
-            >
+            </NavLink>
+            <NavLink to="/favorites" className={setActive}>
               Избранное
-            </span>
+            </NavLink>
           </div>
         </div>
-      </div>
+      </Container>
     </header>
   );
 };
