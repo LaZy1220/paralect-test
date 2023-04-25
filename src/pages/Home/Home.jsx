@@ -11,9 +11,6 @@ export const Home = () => {
   const [salaryFrom, setSalaryFrom] = useState("");
   const [salaryTo, setSalaryTo] = useState("");
   const [search, setSearch] = useState("");
-  useEffect(() => {
-    getAllVacancies();
-  }, []);
   return (
     <main className={styles.home}>
       <Container>
