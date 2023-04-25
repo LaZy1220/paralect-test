@@ -7,10 +7,15 @@ import { getAllVacancies } from "../../services/getAllVacancies";
 import { VacanciesList } from "../../components/Vacancies/VacanciesList";
 
 export const Home = () => {
+  const [vacancies, setVacancies] = useState([]);
   const [industry, setIndustry] = useState("");
   const [salaryFrom, setSalaryFrom] = useState("");
   const [salaryTo, setSalaryTo] = useState("");
   const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    getAllVacancies(1);
+  }, []);
   return (
     <main className={styles.home}>
       <Container>
