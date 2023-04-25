@@ -1,3 +1,5 @@
-export const VacanciesItem = (props) => {
-  return <li>{props.town}</li>;
+import styles from "./VacanciesItem.module.scss";
+
+export const VacanciesItem = () => {
+  return <li>ВАКАНСИЯ</li>;
 };

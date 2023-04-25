@@ -23,7 +23,7 @@ export const Industry = ({ industry, setIndustry }) => {
       placeholder="Выберите отрасль"
       rightSection={<img src={BigArrow} alt="big-arrow" />}
       rightSectionWidth={40}
-      maxDropdownHeight={140}
+      maxDropdownHeight={180}
       styles={{ rightSection: { pointerEvents: "none" } }}
       data={categories}
     />

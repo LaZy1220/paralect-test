@@ -8,7 +8,9 @@ export const Filters = ({
   setIndustry,
   industry,
   setSalaryFrom,
+  salaryFrom,
   setSalaryTo,
+  salaryTo,
 }) => {
   return (
     <div className={styles.filters}>
@@ -22,7 +24,12 @@ export const Filters = ({
           <img className={styles.cross} src={Cross} alt="cross" />
         </div>
         <Industry setIndustry={setIndustry} industry={industry} />
-        <Salary />
+        <Salary
+          setSalaryFrom={setSalaryFrom}
+          salaryFrom={salaryFrom}
+          setSalaryTo={setSalaryTo}
+          salaryTo={salaryTo}
+        />
         <button data-elem="search-button" className={styles.button}>
           Применить
         </button>
