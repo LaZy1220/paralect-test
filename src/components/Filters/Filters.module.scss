@@ -1,5 +1,6 @@
 .filters {
-  width: 315px;
+  min-width: 315px;
+  max-width: 30%;
   border: 1px solid var(--light-gray);
   background-color: #ffff;
   border-radius: 12px;
