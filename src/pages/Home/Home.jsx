@@ -2,10 +2,15 @@ import styles from "./Home.module.scss";
 import { Container } from "../../components/Container/Container";
 import { Filters } from "../../components/Filters/Filters";
 import { Search } from "../../components/Search/Search";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getAllVacancies } from "../../services/getAllVacancies";
+import { VacanciesList } from "../../components/Vacancies/VacanciesList";
 
 export const Home = () => {
+  const [] = useState("");
+  const [] = useState("");
+  const [] = useState("");
+  const [] = useState("");
   useEffect(() => {
     getAllVacancies();
   }, []);
@@ -16,7 +21,7 @@ export const Home = () => {
           <Filters />
           <div className={styles["full-width"]}>
             <Search />
-            <div>Вакансии</div>
+            <VacanciesList />
           </div>
         </div>
       </Container>

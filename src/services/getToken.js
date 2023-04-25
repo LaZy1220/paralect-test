@@ -18,7 +18,6 @@ export const getToken = async () => {
     if (data.access_token) {
       window.localStorage.setItem("access_token", data.access_token);
       window.localStorage.setItem("refresh_token", data.refresh_token);
-      window.localStorage.setItem("token_type", data.token_type);
     }
     return data;
   } catch (error) {

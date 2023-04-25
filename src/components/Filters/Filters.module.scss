@@ -12,6 +12,7 @@
   right: 20px;
   display: flex;
   gap: 8px;
+  cursor: pointer;
 }
 .reset-text {
   font-weight: 500;
@@ -26,9 +27,20 @@
   font-size: 20px;
   margin-bottom: 32px;
 }
-.subtitle {
-  font-weight: 700;
-  font-size: 16px;
+.select {
+  label {
+    font-weight: 700;
+    font-size: 16px;
+  }
+  input {
+    padding: 17px 30px 23px 12px;
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
 .big-arrow {
   position: absolute;
@@ -36,8 +48,8 @@
   right: 12px;
   top: 8px;
 }
-.cross {
-  cursor: pointer;
+.big-arrow-up {
+  transform: rotate(180deg);
 }
 .gap {
   display: flex;
@@ -54,8 +66,11 @@
   font-size: 14px;
   width: 100%;
   box-sizing: border-box;
-  ::placeholder {
-    color: var(--dark-gray);
+  &:focus {
+    outline: 1px solid var(--blue);
+  }
+  .input-selector {
+    cursor: pointer;
   }
 }
 .button {
@@ -89,4 +104,26 @@
 }
 .border {
   position: relative;
+}
+.categories-list {
+  transition: all 0.5s;
+  position: absolute;
+  top: 145px;
+  left: 20px;
+  width: calc(100% - 65px);
+  background-color: #ffff;
+  max-height: 150px;
+  border: 1px solid var(--dark-gray);
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px var(--black);
+}
+.category-item {
+  list-style: none;
+  padding: 2px 0;
+  cursor: pointer;
+  font-size: 14px;
+  &:hover {
+    background-color: var(--light-gray);
+  }
 }

@@ -2,7 +2,6 @@ import styles from "./Filters.module.scss";
 import Cross from "../../assets/Cross.svg";
 import { Industry } from "./Industry/Industry";
 import { Salary } from "./Salary/Salary";
-import axios from "../../axios";
 
 export const Filters = () => {
   return (
