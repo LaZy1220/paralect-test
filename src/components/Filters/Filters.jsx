@@ -2,17 +2,26 @@ import styles from "./Filters.module.scss";
 import Cross from "../../assets/Cross.svg";
 import { Industry } from "./Industry/Industry";
 import { Salary } from "./Salary/Salary";
+import { resetFilters } from "../../utils/filters/resetFilters";
 
-export const Filters = () => {
+export const Filters = ({
+  setIndustry,
+  industry,
+  setSalaryFrom,
+  setSalaryTo,
+}) => {
   return (
     <div className={styles.filters}>
       <div className={styles.body}>
         <h3 className={styles.title}>Фильтры</h3>
-        <div className={styles.reset}>
+        <div
+          className={styles.reset}
+          onClick={() => resetFilters(setIndustry, setSalaryFrom, setSalaryTo)}
+        >
           <span className={styles["reset-text"]}>Сбросить всё</span>
           <img className={styles.cross} src={Cross} alt="cross" />
         </div>
-        <Industry />
+        <Industry setIndustry={setIndustry} industry={industry} />
         <Salary />
         <button data-elem="search-button" className={styles.button}>
           Применить

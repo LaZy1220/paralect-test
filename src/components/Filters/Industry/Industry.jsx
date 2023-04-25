@@ -5,7 +5,10 @@ import cn from "classnames";
 import { getCategories } from "../../../services/getCategories";
 import { useEffect, useState } from "react";
 
-export const Industry = () => {
+// value={search}
+//onChange={(event) => setSearch(event.target.value)}
+
+export const Industry = ({ industry, setIndustry }) => {
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     getCategories().then((data) => setCategories(data));
@@ -14,6 +17,8 @@ export const Industry = () => {
     <Select
       className={cn(styles.select, styles.gap)}
       label="Отрасль"
+      value={industry}
+      onChange={setIndustry}
       data-elem="industry-select"
       placeholder="Выберите отрасль"
       rightSection={<img src={BigArrow} alt="big-arrow" />}

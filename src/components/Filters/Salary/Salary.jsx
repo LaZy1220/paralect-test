@@ -8,6 +8,7 @@ export const Salary = () => {
       <div className={styles.border}>
         <input
           data-elem="salary-from-input"
+          type="number"
           className={styles["filters-input"]}
           placeholder="От"
         />
@@ -17,6 +18,7 @@ export const Salary = () => {
       <div className={styles.border}>
         <input
           data-elem="salary-to-input"
+          type="number"
           className={styles["filters-input"]}
           placeholder="До"
         />
