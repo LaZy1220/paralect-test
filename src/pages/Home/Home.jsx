@@ -18,7 +18,6 @@ export const Home = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    console.log(isLoading);
     getAllVacancies(0).then((data) => {
       setVacancies(data.objects);
       setIsLoading(false);

@@ -6,8 +6,7 @@ export const getAllVacancies = async (page) => {
     if (!window.localStorage.getItem("access_token")) {
       getToken();
     }
-    const { data } = await axios.get(`vacancies/?page=${page}&count=5`);
-    console.log(data);
+    const { data } = await axios.get(`vacancies/?page=${page}&count=4`);
     return data;
   } catch (error) {
     console.log(error);
