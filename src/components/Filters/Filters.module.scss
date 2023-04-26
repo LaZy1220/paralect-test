@@ -1,6 +1,7 @@
 .filters {
   min-width: 315px;
   max-width: 30%;
+  height: 360px;
   border: 1px solid var(--light-gray);
   background-color: #ffff;
   border-radius: 12px;
@@ -10,7 +11,7 @@
 .reset {
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 19px;
   display: flex;
   gap: 8px;
   cursor: pointer;
@@ -21,12 +22,12 @@
   color: var(--dark-gray);
 }
 .body {
-  padding: 20px;
+  padding: 17px 20px;
 }
 .title {
   font-weight: 700;
   font-size: 20px;
-  margin-bottom: 32px;
+  margin-bottom: 26px;
 }
 .select {
   label {
@@ -55,8 +56,8 @@
 .gap {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 20px;
+  gap: 7px;
+  margin-bottom: 22px;
 }
 
 .filters-input {
@@ -93,14 +94,14 @@
 .arrow-up {
   transform: rotate(-180deg);
   position: absolute;
-  right: 12px;
-  top: 8px;
+  right: 14px;
+  top: 10px;
   cursor: pointer;
 }
 .arrow-down {
   position: absolute;
-  right: 12px;
-  bottom: 8px;
+  right: 14px;
+  bottom: 10px;
   cursor: pointer;
 }
 .border {

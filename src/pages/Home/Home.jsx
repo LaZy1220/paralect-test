@@ -7,14 +7,22 @@ import { getAllVacancies } from "../../services/getAllVacancies";
 import { VacanciesList } from "../../components/Vacancies/VacanciesList";
 
 export const Home = () => {
+  //vacancies state
   const [vacancies, setVacancies] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  //inputs state
   const [industry, setIndustry] = useState("");
   const [salaryFrom, setSalaryFrom] = useState("");
   const [salaryTo, setSalaryTo] = useState("");
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    getAllVacancies(1);
+    setIsLoading(true);
+    console.log(isLoading);
+    getAllVacancies(0).then((data) => {
+      setVacancies(data.objects);
+      setIsLoading(false);
+    });
   }, []);
   return (
     <main className={styles.home}>
@@ -30,7 +38,11 @@ export const Home = () => {
           />
           <div className={styles["full-width"]}>
             <Search />
-            <VacanciesList />
+            {isLoading ? (
+              <div>Loading...</div>
+            ) : (
+              <VacanciesList vacancies={vacancies} />
+            )}
           </div>
         </div>
       </Container>
