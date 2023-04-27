@@ -5,6 +5,7 @@ import { Search } from "../../components/Search/Search";
 import { useEffect, useState } from "react";
 import { getAllVacancies } from "../../services/getAllVacancies";
 import { VacanciesList } from "../../components/Vacancies/VacanciesList";
+import { Paginate } from "../../components/Paginate/Paginate";
 
 export const Home = () => {
   //vacancies state
@@ -42,6 +43,9 @@ export const Home = () => {
             ) : (
               <VacanciesList vacancies={vacancies} />
             )}
+            <div className={styles.center}>
+              <Paginate />
+            </div>
           </div>
         </div>
       </Container>

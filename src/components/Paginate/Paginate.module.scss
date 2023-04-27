@@ -1,0 +1,33 @@
+.paginate {
+  display: flex;
+  gap: 7px;
+  margin-bottom: 44px;
+  margin-top: 18px;
+}
+.box {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  background-color: var(--white);
+  border: 1px solid var(--gray);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background: var(--blue);
+    border: 1px solid var(--blue);
+    color: var(--white);
+    svg {
+      fill: var(--white);
+    }
+  }
+}
+.active {
+  background: var(--blue);
+  border: 1px solid var(--blue);
+  color: var(--white);
+}
+.left-arrow {
+  transform: rotate(180deg);
+}
