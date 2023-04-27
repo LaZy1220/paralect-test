@@ -23,7 +23,7 @@ export const VacanciesItem = ({
           <div className={styles.flex}>
             <span className={styles.payment}>
               з/п{" "}
-              {payment_from === 0 && payment_to === 0
+              {payment_from === 0 || payment_to === 0
                 ? payment
                 : `${payment_from} - ${payment_to} ${currency}`}
             </span>
