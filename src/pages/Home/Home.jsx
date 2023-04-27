@@ -7,7 +7,7 @@ import { getAllVacancies } from "../../services/getAllVacancies";
 import { VacanciesList } from "../../components/Vacancies/VacanciesList";
 import { Paginate } from "../../components/Paginate/Paginate";
 
-export const Home = () => {
+export const Home = ({ currentPage }) => {
   //vacancies state
   const [vacancies, setVacancies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -19,7 +19,7 @@ export const Home = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    getAllVacancies(0).then((data) => {
+    getAllVacancies(currentPage - 1).then((data) => {
       setVacancies(data.objects);
       setIsLoading(false);
     });
@@ -44,7 +44,7 @@ export const Home = () => {
               <VacanciesList vacancies={vacancies} />
             )}
             <div className={styles.center}>
-              <Paginate />
+              <Paginate currentPage={currentPage} />
             </div>
           </div>
         </div>

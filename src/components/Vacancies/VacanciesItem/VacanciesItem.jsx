@@ -40,7 +40,7 @@ export const VacanciesItem = ({
             [styles.favorite]: isFavorite,
           })}
         >
-          <CustomStar />
+          <CustomStar data-elem={`vacancy-${id}-shortlist-button`} />
         </div>
       </div>
     </li>
