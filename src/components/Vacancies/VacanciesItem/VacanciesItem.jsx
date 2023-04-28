@@ -2,7 +2,7 @@ import styles from "./VacanciesItem.module.scss";
 import Location from "../../../assets/location.svg";
 import CustomStar from "../../CustomStar";
 import cn from "classnames";
-import { checkPayment } from "../../../utils/vacancies/checkPayment";
+import { checkPayment } from "../../../utils/checkPayment";
 
 export const VacanciesItem = ({
   id,
