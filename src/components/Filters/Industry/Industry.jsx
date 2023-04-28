@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 
 export const Industry = ({ industry, setIndustry }) => {
   const [categories, setCategories] = useState([]);
+  console.log(categories);
   useEffect(() => {
     getCategories().then((data) => setCategories(data));
   }, []);
