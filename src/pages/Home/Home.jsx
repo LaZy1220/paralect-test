@@ -3,23 +3,32 @@ import { Container } from "../../components/Container/Container";
 import { Filters } from "../../components/Filters/Filters";
 import { Search } from "../../components/Search/Search";
 import { useEffect, useState } from "react";
-import { getAllVacancies } from "../../services/getAllVacancies";
+import { getVacancies } from "../../services/getVacancies";
 import { VacanciesList } from "../../components/Vacancies/VacanciesList";
 
 export const Home = ({ currentPage, setCurrentPage }) => {
-  //vacancies state
-  const [vacancies, setVacancies] = useState([]);
+  const [vacancies, setVacancies] = useState({ objects: [] });
   const [isLoading, setIsLoading] = useState(false);
-  //inputs state
+
   const [industry, setIndustry] = useState("");
   const [salaryFrom, setSalaryFrom] = useState("");
   const [salaryTo, setSalaryTo] = useState("");
   const [search, setSearch] = useState("");
 
+  const [isFiltered, setIsFiltered] = useState(false);
+  const [isSearched, setIsSearched] = useState(false);
   useEffect(() => {
     setIsLoading(true);
-    getAllVacancies(currentPage - 1).then((data) => {
-      setVacancies(data.objects);
+    getVacancies(
+      search,
+      salaryFrom,
+      salaryTo,
+      industry,
+      isFiltered,
+      isSearched,
+      currentPage - 1
+    ).then((data) => {
+      setVacancies(data);
       setIsLoading(false);
     });
   }, [currentPage]);
@@ -34,9 +43,26 @@ export const Home = ({ currentPage, setCurrentPage }) => {
             salaryFrom={salaryFrom}
             setSalaryTo={setSalaryTo}
             salaryTo={salaryTo}
+            search={search}
+            setVacancies={setVacancies}
+            setIsLoading={setIsLoading}
+            setCurrentPage={setCurrentPage}
+            setIsFiltered={setIsFiltered}
+            isSearched={isSearched}
           />
           <div className={styles["full-width"]}>
-            <Search />
+            <Search
+              search={search}
+              setSearch={setSearch}
+              industry={industry}
+              salaryFrom={salaryFrom}
+              salaryTo={salaryTo}
+              setVacancies={setVacancies}
+              setIsLoading={setIsLoading}
+              isFiltered={isFiltered}
+              setCurrentPage={setCurrentPage}
+              setIsSearched={setIsSearched}
+            />
             <VacanciesList
               isLoading={isLoading}
               vacancies={vacancies}
