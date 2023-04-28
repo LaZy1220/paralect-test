@@ -3,6 +3,7 @@ import Cross from "../../assets/Cross.svg";
 import { Industry } from "./Industry/Industry";
 import { Salary } from "./Salary/Salary";
 import { resetFilters } from "../../utils/filters";
+import { getVacancies } from "../../services/getVacancies";
 
 export const Filters = ({
   setIndustry,
@@ -11,6 +12,12 @@ export const Filters = ({
   salaryFrom,
   setSalaryTo,
   salaryTo,
+  search,
+  setVacancies,
+  setIsLoading,
+  setCurrentPage,
+  setIsFiltered,
+  isSearched,
 }) => {
   return (
     <div className={styles.filters}>
@@ -18,7 +25,16 @@ export const Filters = ({
         <h3 className={styles.title}>Фильтры</h3>
         <div
           className={styles.reset}
-          onClick={() => resetFilters(setIndustry, setSalaryFrom, setSalaryTo)}
+          onClick={() => {
+            setIsFiltered(false);
+            resetFilters(setIndustry, setSalaryFrom, setSalaryTo);
+            setIsLoading(true);
+            setCurrentPage(1);
+            getVacancies(search, "", "", "", false, isSearched).then((data) => {
+              setVacancies(data);
+              setIsLoading(false);
+            });
+          }}
         >
           <span className={styles["reset-text"]}>Сбросить всё</span>
           <img className={styles.cross} src={Cross} alt="cross" />
@@ -30,7 +46,26 @@ export const Filters = ({
           setSalaryTo={setSalaryTo}
           salaryTo={salaryTo}
         />
-        <button data-elem="search-button" className={styles.button}>
+        <button
+          onClick={() => {
+            setIsLoading(true);
+            setIsFiltered(true);
+            setCurrentPage(1);
+            getVacancies(
+              search,
+              salaryFrom,
+              salaryTo,
+              industry,
+              true,
+              isSearched
+            ).then((data) => {
+              setVacancies(data);
+              setIsLoading(false);
+            });
+          }}
+          data-elem="search-button"
+          className={styles.button}
+        >
           Применить
         </button>
       </div>

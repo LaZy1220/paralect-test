@@ -2,17 +2,13 @@ import { Select } from "@mantine/core";
 import BigArrow from "../../../assets/big-arrow.svg";
 import styles from "../Filters.module.scss";
 import cn from "classnames";
-import { getCategories } from "../../../services/getCategories";
+import { getCatalogues } from "../../../services/getCatalogues";
 import { useEffect, useState } from "react";
 
-// value={search}
-//onChange={(event) => setSearch(event.target.value)}
-
 export const Industry = ({ industry, setIndustry }) => {
-  const [categories, setCategories] = useState([]);
-  console.log(categories);
+  const [catalogues, setCatalogues] = useState([]);
   useEffect(() => {
-    getCategories().then((data) => setCategories(data));
+    getCatalogues().then((data) => setCatalogues(data));
   }, []);
   return (
     <Select
@@ -26,7 +22,7 @@ export const Industry = ({ industry, setIndustry }) => {
       rightSectionWidth={50}
       maxDropdownHeight={180}
       styles={{ rightSection: { pointerEvents: "none" } }}
-      data={categories}
+      data={catalogues}
     />
   );
 };

@@ -9,16 +9,23 @@ export const VacanciesList = ({
   setCurrentPage,
 }) => {
   const isFavorite = true;
+  let maxPage;
+  if (Math.ceil(vacancies.total / 4) > 126) {
+    maxPage = 126;
+  } else {
+    maxPage = Math.ceil(vacancies.total / 4);
+  }
+  console.log(maxPage);
   return (
     <>
       {isLoading ? (
         <div>Loading...</div>
-      ) : vacancies.length === 0 ? (
+      ) : vacancies.objects.length === 0 ? (
         <div>ПУсто</div>
       ) : (
         <>
           <ul className={styles.list}>
-            {vacancies.map((vacancy) => {
+            {vacancies.objects.map((vacancy) => {
               if (vacancy.id === 45706493) {
                 return (
                   <VacanciesItem isFavorite key={vacancy.id} {...vacancy} />
@@ -27,12 +34,12 @@ export const VacanciesList = ({
               return <VacanciesItem key={vacancy.id} {...vacancy} />;
             })}
           </ul>
-          {vacancies.length > 0 && (
+          {vacancies.objects.length > 0 && (
             <div className={styles.center}>
               <Pagination
                 value={currentPage}
                 onChange={setCurrentPage}
-                total={3}
+                total={maxPage}
               />
             </div>
           )}
