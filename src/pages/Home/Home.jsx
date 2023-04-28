@@ -5,9 +5,8 @@ import { Search } from "../../components/Search/Search";
 import { useEffect, useState } from "react";
 import { getAllVacancies } from "../../services/getAllVacancies";
 import { VacanciesList } from "../../components/Vacancies/VacanciesList";
-import { Paginate } from "../../components/Paginate/Paginate";
 
-export const Home = ({ currentPage }) => {
+export const Home = ({ currentPage, setCurrentPage }) => {
   //vacancies state
   const [vacancies, setVacancies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -23,7 +22,7 @@ export const Home = ({ currentPage }) => {
       setVacancies(data.objects);
       setIsLoading(false);
     });
-  }, []);
+  }, [currentPage]);
   return (
     <main className={styles.home}>
       <Container>
@@ -38,14 +37,12 @@ export const Home = ({ currentPage }) => {
           />
           <div className={styles["full-width"]}>
             <Search />
-            {isLoading ? (
-              <div>Loading...</div>
-            ) : (
-              <VacanciesList vacancies={vacancies} />
-            )}
-            <div className={styles.center}>
-              <Paginate currentPage={currentPage} />
-            </div>
+            <VacanciesList
+              isLoading={isLoading}
+              vacancies={vacancies}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
           </div>
         </div>
       </Container>

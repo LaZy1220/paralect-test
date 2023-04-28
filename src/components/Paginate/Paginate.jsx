@@ -1,10 +1,13 @@
 import styles from "./Paginate.module.scss";
 import CustomArrow from "../CustomArrow";
 import cn from "classnames";
+import {
+  incrementPage,
+  decrementPage,
+  handleChangePage,
+} from "../../utils/paginate";
 
-export const Paginate = ({ currentPage }) => {
-  let pravePage = currentPage - 1;
-  let nextPage = currentPage + 1;
+export const Paginate = ({ currentPage, setCurrentPage }) => {
   return (
     <div className={styles.paginate}>
       <button
@@ -15,6 +18,7 @@ export const Paginate = ({ currentPage }) => {
           styles.box,
           styles["left-arrow"]
         )}
+        onClick={() => decrementPage(currentPage, setCurrentPage)}
       >
         <CustomArrow />
       </button>
@@ -23,21 +27,44 @@ export const Paginate = ({ currentPage }) => {
           <button className={cn(styles.box, styles.active)}>
             {currentPage}
           </button>
-          <button className={styles.box}>{currentPage + 1}</button>
-          <button className={styles.box}>{currentPage + 2}</button>
+          <button
+            onClick={() => handleChangePage(currentPage + 1, setCurrentPage)}
+            className={styles.box}
+          >
+            {currentPage + 1}
+          </button>
+          <button
+            onClick={() => handleChangePage(currentPage + 2, setCurrentPage)}
+            className={styles.box}
+          >
+            {currentPage + 2}
+          </button>
         </>
       ) : (
         <>
-          <button className={styles.box}>{pravePage}</button>
+          <button
+            onClick={() => handleChangePage(currentPage - 1, setCurrentPage)}
+            className={styles.box}
+          >
+            {currentPage - 1}
+          </button>
           <button className={cn(styles.box, styles.active)}>
             {currentPage}
           </button>
-          <button className={styles.box}>{nextPage}</button>
+          <button
+            onClick={() => handleChangePage(currentPage + 1, setCurrentPage)}
+            className={styles.box}
+          >
+            {currentPage + 1}
+          </button>
         </>
       )}
-      <div className={styles.box}>
+      <button
+        className={styles.box}
+        onClick={() => incrementPage(setCurrentPage)}
+      >
         <CustomArrow />
-      </div>
+      </button>
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import styles from "../Filters.module.scss";
 import Arrow from "../../../assets/small-arrow.svg";
-import { incrementSalary } from "../../../utils/filters/incrementSalary";
-import { decrementSalary } from "../../../utils/filters/decrementSalary";
+import { incrementSalary, decrementSalary } from "../../../utils/filters";
 
 export const Salary = ({
   setSalaryFrom,

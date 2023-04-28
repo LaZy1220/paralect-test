@@ -9,7 +9,12 @@ export const App = () => {
   return (
     <Layout>
       <Routes>
-        <Route path="/" element={<Home currentPage={currentPage} />} />
+        <Route
+          path="/"
+          element={
+            <Home currentPage={currentPage} setCurrentPage={setCurrentPage} />
+          }
+        />
         <Route path="/favorites" element={<Favorites />} />
       </Routes>
     </Layout>
