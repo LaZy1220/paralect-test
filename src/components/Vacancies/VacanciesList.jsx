@@ -1,6 +1,6 @@
 import { VacanciesItem } from "./VacanciesItem/VacanciesItem";
-import { Paginate } from "../Paginate/Paginate";
 import styles from "./VacanciesList.module.scss";
+import { Pagination } from "@mantine/core";
 
 export const VacanciesList = ({
   isLoading,
@@ -13,6 +13,8 @@ export const VacanciesList = ({
     <>
       {isLoading ? (
         <div>Loading...</div>
+      ) : vacancies.length === 0 ? (
+        <div>ПУсто</div>
       ) : (
         <>
           <ul className={styles.list}>
@@ -27,9 +29,10 @@ export const VacanciesList = ({
           </ul>
           {vacancies.length > 0 && (
             <div className={styles.center}>
-              <Paginate
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
+              <Pagination
+                value={currentPage}
+                onChange={setCurrentPage}
+                total={3}
               />
             </div>
           )}
