@@ -8,7 +8,7 @@ import { VacanciesList } from "../../components/Vacancies/VacanciesList";
 
 export const Home = ({ currentPage, setCurrentPage }) => {
   const [vacancies, setVacancies] = useState({ objects: [] });
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const [industry, setIndustry] = useState("");
   const [salaryFrom, setSalaryFrom] = useState("");
