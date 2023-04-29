@@ -34,7 +34,7 @@ export const Home = ({ currentPage, setCurrentPage }) => {
   }, [currentPage]);
   return (
     <main className={styles.home}>
-      <Container>
+      <div className={styles.wrapper}>
         <div className={styles.flex}>
           <Filters
             setIndustry={setIndustry}
@@ -71,7 +71,7 @@ export const Home = ({ currentPage, setCurrentPage }) => {
             />
           </div>
         </div>
-      </Container>
+      </div>
     </main>
   );
 };

@@ -9,7 +9,7 @@ export const NothingHere = (isHomePage = false) => {
       {isHomePage ? (
         <div className="center column">
           <img src={NothingHereImg} alt="Nothing here" />
-          <h1 className={styles.title}>Упс, здесь еще ничего нет!</h1>
+          <h1 className={styles.title}>Ой, таких вакансий нет!</h1>
         </div>
       ) : (
         <div className="center column">

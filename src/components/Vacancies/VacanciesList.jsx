@@ -10,10 +10,9 @@ export const VacanciesList = ({
   currentPage,
   setCurrentPage,
 }) => {
-  const isFavorite = true;
   let maxPage;
-  if (Math.ceil(vacancies.total / 4) > 126) {
-    maxPage = 126;
+  if (Math.ceil(vacancies.total / 4) > 125) {
+    maxPage = 125;
   } else {
     maxPage = Math.ceil(vacancies.total / 4);
   }
@@ -27,12 +26,7 @@ export const VacanciesList = ({
         <>
           <ul className={styles.list}>
             {vacancies.objects.map((vacancy) => {
-              if (vacancy.id === 45706493) {
-                return (
-                  <VacanciesItem isFavorite key={vacancy.id} {...vacancy} />
-                );
-              }
-              return <VacanciesItem key={vacancy.id} {...vacancy} />;
+              return <VacanciesItem key={vacancy.id} vacancy={vacancy} />;
             })}
           </ul>
           {vacancies.objects.length > 0 && (

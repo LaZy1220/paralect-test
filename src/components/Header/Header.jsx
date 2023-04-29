@@ -1,15 +1,13 @@
-import { useState } from "react";
 import Logo from "../../assets/logo.svg";
 import styles from "./Header.module.scss";
 import { NavLink } from "react-router-dom";
-import { Container } from "../Container/Container";
 
 export const Header = () => {
   const setActive = ({ isActive }) =>
     isActive ? styles["active-link"] : styles.button;
   return (
     <header className={styles.header}>
-      <Container>
+      <div className={styles.wrapper}>
         <div className="center">
           <div className={styles.logo}>
             <img src={Logo} alt="logo" />
@@ -24,7 +22,7 @@ export const Header = () => {
             </NavLink>
           </div>
         </div>
-      </Container>
+      </div>
     </header>
   );
 };
