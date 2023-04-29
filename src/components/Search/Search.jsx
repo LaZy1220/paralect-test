@@ -15,6 +15,26 @@ export const Search = ({
   setCurrentPage,
   setIsSearched,
 }) => {
+  const getRequest = () => {
+    if (search.trim() === "") {
+      return;
+    }
+    setIsLoading(true);
+    setCurrentPage(1);
+    setIsSearched(true);
+    getVacancies(search, salaryFrom, salaryTo, industry, isFiltered, true).then(
+      (data) => {
+        setVacancies(data);
+        setIsLoading(false);
+      }
+    );
+  };
+  const onKeyDownEnter = (event) => {
+    if (event.key !== "Enter") {
+      return;
+    }
+    getRequest();
+  };
   return (
     <div className={styles.search}>
       <img className={styles["search-icon"]} src={SearchImg} alt="search" />
@@ -28,27 +48,12 @@ export const Search = ({
             setIsSearched(false);
           }
         }}
+        onKeyDown={onKeyDownEnter}
         placeholder="Введите название вакансии"
       />
       <button
         onClick={() => {
-          if (search.trim() === "") {
-            return;
-          }
-          setIsLoading(true);
-          setCurrentPage(1);
-          setIsSearched(true);
-          getVacancies(
-            search,
-            salaryFrom,
-            salaryTo,
-            industry,
-            isFiltered,
-            true
-          ).then((data) => {
-            setVacancies(data);
-            setIsLoading(false);
-          });
+          getRequest();
         }}
         data-elem="search-button"
         className={cn(styles.button)}

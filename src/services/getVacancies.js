@@ -18,7 +18,7 @@ export const getVacancies = async (
     if (salaryFrom || salaryTo) {
       url += "&no_agreement=1";
     }
-    if (String(salaryFrom).trim() !== "") {
+    if (String(salaryFrom).trim() != "") {
       url += `&payment_from=${salaryFrom}`;
     }
     if (salaryTo.trim() !== "") {

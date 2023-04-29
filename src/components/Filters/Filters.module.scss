@@ -15,6 +15,8 @@
   display: flex;
   gap: 8px;
   cursor: pointer;
+  border: none;
+  background-color: var(--white);
 }
 .reset-text {
   font-weight: 500;

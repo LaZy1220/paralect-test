@@ -4,6 +4,7 @@ import { Industry } from "./Industry/Industry";
 import { Salary } from "./Salary/Salary";
 import { resetFilters } from "../../utils/filters";
 import { getVacancies } from "../../services/getVacancies";
+import { checkIsEmpty } from "../../utils/checkIsEmpty";
 
 export const Filters = ({
   setIndustry,
@@ -19,12 +20,15 @@ export const Filters = ({
   setIsFiltered,
   isSearched,
 }) => {
+  const isEmpty = checkIsEmpty(industry, salaryFrom, salaryTo);
+
   return (
     <div className={styles.filters}>
       <div className={styles.body}>
         <h3 className={styles.title}>Фильтры</h3>
-        <div
+        <button
           className={styles.reset}
+          disabled={isEmpty}
           onClick={() => {
             setIsFiltered(false);
             resetFilters(setIndustry, setSalaryFrom, setSalaryTo);
@@ -38,7 +42,7 @@ export const Filters = ({
         >
           <span className={styles["reset-text"]}>Сбросить всё</span>
           <img className={styles.cross} src={Cross} alt="cross" />
-        </div>
+        </button>
         <Industry setIndustry={setIndustry} industry={industry} />
         <Salary
           setSalaryFrom={setSalaryFrom}
@@ -65,6 +69,7 @@ export const Filters = ({
           }}
           data-elem="search-button"
           className={styles.button}
+          disabled={isEmpty}
         >
           Применить
         </button>
