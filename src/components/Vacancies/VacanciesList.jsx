@@ -1,3 +1,5 @@
+import { LoaderSpinner } from "../LoaderSpinner/LoaderSpinner";
+import { NothingHere } from "../NothingHere/NothingHere";
 import { VacanciesItem } from "./VacanciesItem/VacanciesItem";
 import styles from "./VacanciesList.module.scss";
 import { Pagination } from "@mantine/core";
@@ -15,13 +17,12 @@ export const VacanciesList = ({
   } else {
     maxPage = Math.ceil(vacancies.total / 4);
   }
-  console.log(maxPage);
   return (
     <>
       {isLoading ? (
-        <div>Loading...</div>
+        <LoaderSpinner />
       ) : vacancies.objects.length === 0 ? (
-        <div>ПУсто</div>
+        <NothingHere isHomePage />
       ) : (
         <>
           <ul className={styles.list}>
