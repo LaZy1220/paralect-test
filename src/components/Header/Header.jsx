@@ -1,10 +1,12 @@
+import { useState } from "react";
 import Logo from "../../assets/logo.svg";
 import styles from "./Header.module.scss";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+import cn from "classnames";
 
 export const Header = () => {
-  const setActive = ({ isActive }) =>
-    isActive ? styles["active-link"] : styles.button;
+  const [isActive, setIsActive] = useState();
+
   return (
     <header className={styles.header}>
       <div className={styles.wrapper}>
@@ -14,12 +16,18 @@ export const Header = () => {
             <span className={styles["logo-title"]}>Jobored</span>
           </div>
           <div className={styles.buttons}>
-            <NavLink to="/" className={setActive}>
+            <Link
+              to="/"
+              id="search-vacancies"
+              className={cn(styles.button, {
+                [styles["active-link"]]: isActive === search - vacancies,
+              })}
+            >
               Поиск Вакансий
-            </NavLink>
-            <NavLink to="/favorites" className={setActive}>
+            </Link>
+            <Link to="/favorites" id="favorites" className={setActive}>
               Избранное
-            </NavLink>
+            </Link>
           </div>
         </div>
       </div>
