@@ -1,6 +1,6 @@
-import { checkPayment } from "../../../utils/checkPayment";
-import Location from "../../../assets/location.svg";
-import CustomStar from "../../CustomStar";
+import { checkPayment } from "../../utils/checkPayment";
+import Location from "../../assets/location.svg";
+import CustomStar from "../CustomStar";
 import cn from "classnames";
 import styles from "./Card.module.scss";
 
@@ -29,21 +29,31 @@ export const Card = ({
                 {profession}
               </span>
             ) : (
-              <span className={styles.profession}>{profession}</span>
+              <span className={styles["detail-profession"]}>{profession}</span>
             )}
 
             <div className={styles.flex}>
-              <span className={styles.payment}>
+              <span
+                className={cn(styles.payment, {
+                  [styles["detail-payment"]]: !navigate,
+                })}
+              >
                 з/п{" "}
                 {payment_from === 0 || payment_to === 0
                   ? payment
                   : `${payment_from} - ${payment_to} ${currency}`}
               </span>
-              <span className={styles.text}>{type_of_work.title}</span>
+              <span
+                className={cn(styles.text, {
+                  [styles["detail-text"]]: !navigate,
+                })}
+              >
+                {type_of_work.title}
+              </span>
             </div>
             <div className={styles.location}>
               <img src={Location} alt="location" />
-              <span className={styles.text}>{town.title}</span>
+              <span className={styles.town}>{town.title}</span>
             </div>
           </div>
           <div

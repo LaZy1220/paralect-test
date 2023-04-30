@@ -4,6 +4,7 @@ import { Container } from "../../components/Container/Container";
 import { LoaderSpinner } from "../../components/LoaderSpinner/LoaderSpinner";
 import { getDetails } from "../../services/getDetails";
 import { useParams } from "react-router-dom";
+import { Card } from "../../components/Card/Card";
 
 export const Details = () => {
   const [vacancy, setVacancy] = useState({});
@@ -17,16 +18,21 @@ export const Details = () => {
       setIsLoading(false);
     });
   }, []);
+
   return (
-    <main className={styles.details}>
+    <main>
       <Container>
         {isLoading ? (
           <LoaderSpinner />
         ) : (
-          <>
-            <div>Шапка</div>
-            <div>все остальное</div>
-          </>
+          <div className={styles.details}>
+            <Card {...vacancy} />
+            <div className={styles["details-body"]}>
+              <div
+                dangerouslySetInnerHTML={{ __html: vacancy.vacancyRichText }}
+              />
+            </div>
+          </div>
         )}
       </Container>
     </main>

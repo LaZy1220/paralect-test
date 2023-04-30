@@ -13,7 +13,7 @@ export const getVacancies = async (
   if (!window.localStorage.getItem("access_token")) {
     getToken();
   }
-  let url = `vacancies/?page=${page}&count=4`;
+  let url = `vacancies/?published=1&page=${page}&count=4`;
   if (isFiltered || isSearched) {
     if (salaryFrom || salaryTo) {
       url += "&no_agreement=1";
