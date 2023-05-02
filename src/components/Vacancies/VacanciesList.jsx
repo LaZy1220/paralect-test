@@ -1,3 +1,4 @@
+import { checkIsFavorite, getFavorites } from "../../utils/favorites";
 import { LoaderSpinner } from "../LoaderSpinner/LoaderSpinner";
 import { NothingHere } from "../NothingHere/NothingHere";
 import { VacanciesItem } from "./VacanciesItem/VacanciesItem";
@@ -11,6 +12,9 @@ export const VacanciesList = ({
   setCurrentPage,
 }) => {
   let maxPage;
+
+  const parseFavoriteVacancies = getFavorites();
+
   if (Math.ceil(vacancies.total / 4) > 125) {
     maxPage = 125;
   } else {
@@ -26,7 +30,17 @@ export const VacanciesList = ({
         <>
           <ul className={styles.list}>
             {vacancies.objects.map((vacancy) => {
-              return <VacanciesItem key={vacancy.id} vacancy={vacancy} />;
+              const isFavorite = checkIsFavorite(
+                vacancy.id,
+                parseFavoriteVacancies
+              );
+              return (
+                <VacanciesItem
+                  key={vacancy.id}
+                  vacancy={vacancy}
+                  checkIsFavorite={isFavorite}
+                />
+              );
             })}
           </ul>
           {vacancies.objects.length > 0 && (

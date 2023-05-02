@@ -5,10 +5,15 @@ import { LoaderSpinner } from "../../components/LoaderSpinner/LoaderSpinner";
 import { getDetails } from "../../services/getDetails";
 import { useParams } from "react-router-dom";
 import { Card } from "../../components/Card/Card";
+import { checkIsFavorite, getFavorites } from "../../utils/favorites";
 
 export const Details = () => {
   const [vacancy, setVacancy] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+
+  const parseFavoriteVacancies = getFavorites();
+
+  const isFavorite = checkIsFavorite(vacancy.id, parseFavoriteVacancies);
 
   const { id } = useParams();
 
@@ -26,7 +31,7 @@ export const Details = () => {
           <LoaderSpinner />
         ) : (
           <div className={styles.details}>
-            <Card vacancy={vacancy} />
+            <Card vacancy={vacancy} checkIsFavorite={isFavorite} />
             <div className={styles["details-body"]}>
               <div
                 dangerouslySetInnerHTML={{ __html: vacancy.vacancyRichText }}

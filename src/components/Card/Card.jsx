@@ -6,7 +6,7 @@ import styles from "./Card.module.scss";
 import { useEffect, useState } from "react";
 import { addFavorite, removeFavorite } from "../../utils/favorites";
 
-export const Card = ({ vacancy, navigate = false }) => {
+export const Card = ({ vacancy, navigate = false, checkIsFavorite }) => {
   const {
     id,
     profession,
@@ -18,7 +18,9 @@ export const Card = ({ vacancy, navigate = false }) => {
   } = vacancy;
   const [isFavorite, setIsFavorite] = useState(false);
   const payment = checkPayment(payment_from, payment_to);
-  const favoriteVacancies = window.localStorage.getItem("favorite-vacancies");
+  useEffect(() => {
+    setIsFavorite(checkIsFavorite);
+  }, []);
   return (
     <>
       <div className={styles.card} data-elem={`vacancy-${id}`}>

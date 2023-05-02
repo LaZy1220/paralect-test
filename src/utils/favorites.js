@@ -1,8 +1,12 @@
-export const addFavorite = (vacancy, setIsFavorite) => {
+export const getFavorites = () => {
   const favoriteVacancies = window.localStorage.getItem("favorite-vacancies");
   const parseFavoriteVacancies = favoriteVacancies
     ? JSON.parse(favoriteVacancies)
     : [];
+  return parseFavoriteVacancies;
+};
+export const addFavorite = (vacancy, setIsFavorite) => {
+  const parseFavoriteVacancies = getFavorites();
   parseFavoriteVacancies.push(vacancy);
   const newFavoriteVacancies = JSON.stringify(parseFavoriteVacancies);
   localStorage.setItem("favorite-vacancies", newFavoriteVacancies);
