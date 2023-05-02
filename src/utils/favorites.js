@@ -19,5 +19,11 @@ export const removeFavorite = (id, setIsFavorite) => {
   localStorage.setItem("favorite-vacancies", newFavoriteVacancies);
   setIsFavorite(false);
 };
-export const checkIsFavorite = (vacancy) => {};
-export const checkIsFavorites = (vacancies) => {};
+export const checkIsFavorite = (id, favoriteVacancies) => {
+  for (let i = 0; i <= favoriteVacancies.length - 1; i++) {
+    if (favoriteVacancies[i].id === id) {
+      return true;
+    }
+  }
+  return false;
+};
