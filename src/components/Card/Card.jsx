@@ -4,7 +4,7 @@ import CustomStar from "../CustomStar";
 import cn from "classnames";
 import styles from "./Card.module.scss";
 import { useEffect, useState } from "react";
-import { addFavorite } from "../../utils/favorites";
+import { addFavorite, removeFavorite } from "../../utils/favorites";
 
 export const Card = ({ vacancy, navigate = false }) => {
   const {
@@ -60,14 +60,16 @@ export const Card = ({ vacancy, navigate = false }) => {
             </div>
           </div>
           {isFavorite ? (
-            <div className={styles.favorite}>
+            <div
+              onClick={() => removeFavorite(id, setIsFavorite)}
+              className={styles.favorite}
+            >
               <CustomStar data-elem={`vacancy-${id}-shortlist-button`} />
             </div>
           ) : (
             <div
               onClick={() => addFavorite(vacancy, setIsFavorite)}
               className={cn(styles.star, {
-                [styles["hover-star"]]: !isFavorite,
                 [styles.favorite]: isFavorite,
               })}
             >

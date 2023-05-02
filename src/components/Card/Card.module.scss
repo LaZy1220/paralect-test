@@ -29,6 +29,7 @@
 }
 .favorite {
   svg {
+    cursor: pointer;
     fill: var(--blue);
     stroke: var(--blue);
   }
