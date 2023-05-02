@@ -2,9 +2,8 @@ import styles from "./Filters.module.scss";
 import Cross from "../../assets/Cross.svg";
 import { Industry } from "./Industry/Industry";
 import { Salary } from "./Salary/Salary";
-import { resetFilters } from "../../utils/filters";
+import { resetFilters, checkIsEmpty } from "../../utils/filters";
 import { getVacancies } from "../../services/getVacancies";
-import { checkIsEmpty } from "../../utils/checkIsEmpty";
 
 export const Filters = ({
   setIndustry,

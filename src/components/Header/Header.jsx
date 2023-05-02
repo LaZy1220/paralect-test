@@ -17,7 +17,6 @@ export const Header = () => {
       setIsActive("search-vacancies");
     }
   });
-  console.log(location.pathname);
   return (
     <header className={styles.header}>
       <div className={styles.wrapper}>

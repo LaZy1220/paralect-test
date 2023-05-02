@@ -26,7 +26,7 @@ export const Details = () => {
           <LoaderSpinner />
         ) : (
           <div className={styles.details}>
-            <Card {...vacancy} />
+            <Card vacancy={vacancy} />
             <div className={styles["details-body"]}>
               <div
                 dangerouslySetInnerHTML={{ __html: vacancy.vacancyRichText }}

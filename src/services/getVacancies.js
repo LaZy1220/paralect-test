@@ -10,18 +10,21 @@ export const getVacancies = async (
   isSearched,
   page = 0
 ) => {
-  if (!window.localStorage.getItem("access_token")) {
-    getToken();
-  }
   let url = `vacancies/?published=1&page=${page}&count=4`;
   if (isFiltered || isSearched) {
     if (salaryFrom || salaryTo) {
       url += "&no_agreement=1";
     }
     if (String(salaryFrom).trim() != "") {
+      if (parseInt(salaryFrom) < 0) {
+        return { objects: [] };
+      }
       url += `&payment_from=${salaryFrom}`;
     }
-    if (salaryTo.trim() !== "") {
+    if (String(salaryTo).trim() !== "") {
+      if (parseInt(salaryTo) < 0) {
+        return { objects: [] };
+      }
       url += `&payment_to=${salaryTo}`;
     }
     if (String(catalogue).trim() !== "") {
@@ -32,6 +35,9 @@ export const getVacancies = async (
     }
   }
   try {
+    if (!window.localStorage.getItem("access_token")) {
+      await getToken();
+    }
     const { data } = await axios.get(url);
     return data;
   } catch (error) {

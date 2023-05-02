@@ -6,7 +6,7 @@ export const VacanciesItem = ({ vacancy }) => {
   const navigate = useNavigate();
   return (
     <li className={styles["list-item"]}>
-      <Card navigate={navigate} {...vacancy} />
+      <Card navigate={navigate} vacancy={vacancy} />
     </li>
   );
 };

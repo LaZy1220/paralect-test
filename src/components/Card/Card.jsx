@@ -3,19 +3,22 @@ import Location from "../../assets/location.svg";
 import CustomStar from "../CustomStar";
 import cn from "classnames";
 import styles from "./Card.module.scss";
+import { useEffect, useState } from "react";
+import { addFavorite } from "../../utils/favorites";
 
-export const Card = ({
-  id,
-  profession,
-  town,
-  type_of_work,
-  payment_to,
-  payment_from,
-  currency,
-  isFavorite = false,
-  navigate = false,
-}) => {
+export const Card = ({ vacancy, navigate = false }) => {
+  const {
+    id,
+    profession,
+    town,
+    type_of_work,
+    payment_to,
+    payment_from,
+    currency,
+  } = vacancy;
+  const [isFavorite, setIsFavorite] = useState(false);
   const payment = checkPayment(payment_from, payment_to);
+  const favoriteVacancies = window.localStorage.getItem("favorite-vacancies");
   return (
     <>
       <div className={styles.card} data-elem={`vacancy-${id}`}>
@@ -56,14 +59,21 @@ export const Card = ({
               <span className={styles.town}>{town.title}</span>
             </div>
           </div>
-          <div
-            className={cn(styles.star, {
-              [styles["hover-star"]]: !isFavorite,
-              [styles.favorite]: isFavorite,
-            })}
-          >
-            <CustomStar data-elem={`vacancy-${id}-shortlist-button`} />
-          </div>
+          {isFavorite ? (
+            <div className={styles.favorite}>
+              <CustomStar data-elem={`vacancy-${id}-shortlist-button`} />
+            </div>
+          ) : (
+            <div
+              onClick={() => addFavorite(vacancy)}
+              className={cn(styles.star, {
+                [styles["hover-star"]]: !isFavorite,
+                [styles.favorite]: isFavorite,
+              })}
+            >
+              <CustomStar data-elem={`vacancy-${id}-shortlist-button`} />
+            </div>
+          )}
         </div>
       </div>
     </>
