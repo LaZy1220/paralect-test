@@ -65,7 +65,7 @@ export const Card = ({ vacancy, navigate = false }) => {
             </div>
           ) : (
             <div
-              onClick={() => addFavorite(vacancy)}
+              onClick={() => addFavorite(vacancy, setIsFavorite)}
               className={cn(styles.star, {
                 [styles["hover-star"]]: !isFavorite,
                 [styles.favorite]: isFavorite,
