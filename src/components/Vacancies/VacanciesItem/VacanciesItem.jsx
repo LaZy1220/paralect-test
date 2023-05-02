@@ -5,7 +5,7 @@ import styles from "../VacanciesList.module.scss";
 export const VacanciesItem = ({ vacancy, checkIsFavorite }) => {
   const navigate = useNavigate();
   return (
-    <li className={styles["list-item"]}>
+    <li className={styles["list-item"]} data-elem={`vacancy-${vacancy.id}`}>
       <Card
         navigate={navigate}
         vacancy={vacancy}

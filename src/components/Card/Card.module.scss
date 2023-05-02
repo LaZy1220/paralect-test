@@ -2,7 +2,7 @@
 .card {
   background-color: var(--white);
   border: 1px solid var(--light-gray);
-  min-height: 137px;
+  min-height: 136px;
   width: 100%;
   border-radius: 12px;
 }
@@ -91,6 +91,6 @@
     pointer-events: none;
   }
 }
-.description {
+.detail-description {
   gap: 15px;
 }

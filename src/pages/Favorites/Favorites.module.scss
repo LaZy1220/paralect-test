@@ -1,3 +1,17 @@
 .nothing {
   padding-top: 120px;
 }
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.list-item {
+  list-style: none;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 99px;
+}

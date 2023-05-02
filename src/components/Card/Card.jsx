@@ -23,9 +23,13 @@ export const Card = ({ vacancy, navigate = false, checkIsFavorite }) => {
   }, []);
   return (
     <>
-      <div className={styles.card} data-elem={`vacancy-${id}`}>
+      <div className={styles.card}>
         <div className={styles["card-body"]}>
-          <div className={styles.description}>
+          <div
+            className={cn(styles.description, {
+              [styles["detail-description"]]: !navigate,
+            })}
+          >
             {navigate ? (
               <span
                 onClick={() => navigate(`/details/${id}`)}
@@ -45,7 +49,9 @@ export const Card = ({ vacancy, navigate = false, checkIsFavorite }) => {
               >
                 з/п{" "}
                 {payment_from === 0 || payment_to === 0
-                  ? payment
+                  ? payment === "не указана"
+                    ? `${payment}`
+                    : `${payment} ${currency}`
                   : `${payment_from} - ${payment_to} ${currency}`}
               </span>
               <span
