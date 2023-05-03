@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiKey = import.meta.env.VITE_APP_API_KEY;
-const apiUrl = import.meta.env.VITE_APP_API_URL;
+const apiUrl = "https://startup-summer-2023-proxy.onrender.com/2.0/";
 const apiClientSecret = import.meta.env.VITE_APP_API_CLIENT_SECRET;
 const accessToken = window.localStorage.getItem("access_token");
 const instance = axios.create({
