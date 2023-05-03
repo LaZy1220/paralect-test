@@ -7,10 +7,16 @@ import { Pagination } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 
 export const VacanciesList = ({
+  search,
+  salaryFrom,
+  salaryTo,
+  industry,
   isLoading,
+  setIsLoading,
   vacancies,
   currentPage,
   setCurrentPage,
+  setVacancies,
 }) => {
   let maxPage;
 
@@ -27,7 +33,15 @@ export const VacanciesList = ({
       {isLoading ? (
         <LoaderSpinner />
       ) : vacancies.objects.length === 0 ? (
-        <NothingHere isHomePage />
+        <NothingHere
+          search={search}
+          industry={industry}
+          salaryFrom={salaryFrom}
+          salaryTo={salaryTo}
+          setVacancies={setVacancies}
+          setIsLoading={setIsLoading}
+          isHomePage
+        />
       ) : (
         <>
           <ul className={styles.list}>

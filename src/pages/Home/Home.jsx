@@ -64,10 +64,16 @@ export const Home = ({ currentPage, setCurrentPage }) => {
               setIsSearched={setIsSearched}
             />
             <VacanciesList
+              search={search}
+              industry={industry}
+              salaryFrom={salaryFrom}
+              salaryTo={salaryTo}
+              setVacancies={setVacancies}
               isLoading={isLoading}
               vacancies={vacancies}
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}
+              setIsLoading={setIsLoading}
             />
           </div>
         </div>
