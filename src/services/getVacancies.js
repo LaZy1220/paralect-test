@@ -2,17 +2,18 @@ import axios from "../axios";
 import { getToken } from "./getToken";
 
 export const getVacancies = async (
-  keyWord,
-  salaryFrom,
-  salaryTo,
-  catalogue,
-  isFiltered,
-  isSearched,
+  keyWord = "",
+  salaryFrom = "",
+  salaryTo = "",
+  catalogue = "",
+  isFiltered = false,
+  isSearched = false,
   page = 0
 ) => {
+  debugger;
   let url = `vacancies/?published=1&page=${page}&count=4`;
   if (isFiltered || isSearched) {
-    if (salaryFrom || salaryTo) {
+    if (salaryFrom && salaryTo != 0) {
       url += "&no_agreement=1";
     }
     if (String(salaryFrom).trim() != "") {

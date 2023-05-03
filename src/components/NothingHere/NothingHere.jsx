@@ -3,12 +3,13 @@ import NothingHereImg from "/assets/nothing-here.svg";
 import styles from "./NothingHere.module.scss";
 import cn from "classnames";
 import { getVacancies } from "../../services/getVacancies";
+import { resetFilters } from "../../utils/filters";
 
 export const NothingHere = ({
-  search = "",
-  salaryFrom = "",
-  salaryTo = "",
-  industry = "",
+  setSearch,
+  setSalaryFrom,
+  setSalaryTo,
+  setIndustry,
   isHomePage = false,
   setVacancies,
   setIsLoading,
@@ -26,14 +27,9 @@ export const NothingHere = ({
         <button
           onClick={() => {
             setIsLoading(true);
-            getVacancies(
-              search,
-              salaryFrom,
-              salaryTo,
-              industry,
-              true,
-              true
-            ).then((data) => {
+            setSearch("");
+            resetFilters(setSalaryFrom, setSalaryTo, setIndustry);
+            getVacancies().then((data) => {
               setVacancies(data);
               setIsLoading(false);
             });

@@ -7,10 +7,10 @@ import { Pagination } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 
 export const VacanciesList = ({
-  search,
-  salaryFrom,
-  salaryTo,
-  industry,
+  setSearch,
+  setSalaryFrom,
+  setSalaryTo,
+  setIndustry,
   isLoading,
   setIsLoading,
   vacancies,
@@ -34,10 +34,10 @@ export const VacanciesList = ({
         <LoaderSpinner />
       ) : vacancies.objects.length === 0 ? (
         <NothingHere
-          search={search}
-          industry={industry}
-          salaryFrom={salaryFrom}
-          salaryTo={salaryTo}
+          setSearch={setSearch}
+          setSalaryFrom={setSalaryFrom}
+          setSalaryTo={setSalaryTo}
+          setIndustry={setIndustry}
           setVacancies={setVacancies}
           setIsLoading={setIsLoading}
           isHomePage
