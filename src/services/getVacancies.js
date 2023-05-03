@@ -10,7 +10,6 @@ export const getVacancies = async (
   isSearched = false,
   page = 0
 ) => {
-  debugger;
   let url = `vacancies/?published=1&page=${page}&count=4`;
   if (isFiltered || isSearched) {
     if (salaryFrom && salaryTo != 0) {
