@@ -94,3 +94,56 @@
 .detail-description {
   gap: 15px;
 }
+
+@media (max-width: 975px) {
+  .detail-profession {
+    font-size: 20px;
+  }
+  .detail-text {
+    font-size: 16px;
+  }
+  .detail-payment {
+    font-size: 16px;
+  }
+  .town {
+    font-size: 14px;
+  }
+}
+@media (max-width: 650px) {
+  .profession,
+  .detail-profession {
+    font-size: 16px;
+  }
+  .text,
+  .detail-text {
+    font-size: 12px;
+  }
+  .payment,
+  .detail-payment {
+    font-size: 12px;
+  }
+  .town {
+    font-size: 12px;
+  }
+}
+@media (max-width: 510px) {
+  .card-body {
+    padding: 16px;
+  }
+  .payment {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    &::after {
+      width: 3px;
+      height: 3px;
+      margin: 0 12px 3px;
+    }
+  }
+}
+@media (max-width: 440px) {
+  .flex {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

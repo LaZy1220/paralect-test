@@ -31,3 +31,21 @@
     background-color: var(--dark-gray);
   }
 }
+@media (max-width: 510px) {
+  .search-input {
+    &::placeholder {
+      font-size: 12px;
+    }
+  }
+}
+@media (max-width: 410px) {
+  .search-input {
+    &::placeholder {
+      font-size: 10px;
+    }
+  }
+  .button {
+    width: 50px;
+    font-size: 12px;
+  }
+}

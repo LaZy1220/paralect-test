@@ -10,3 +10,16 @@
 .wrapper {
   padding: 40px 13.3% 51px 13.3%;
 }
+@media (max-width: 1100px) {
+  .flex {
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .full-width {
+    width: 100%;
+  }
+  .wrapper {
+    padding: 40px 10% 51px 10%;
+  }
+}

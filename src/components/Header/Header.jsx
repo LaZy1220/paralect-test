@@ -20,7 +20,7 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.wrapper}>
-        <div className="center">
+        <div className={styles.center}>
           <div className={styles.logo}>
             <img src={Logo} alt="logo" />
             <span className={styles["logo-title"]}>Jobored</span>

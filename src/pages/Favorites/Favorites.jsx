@@ -7,6 +7,7 @@ import { getFavorites } from "../../utils/favorites";
 import { Card } from "../../components/Card/Card";
 import { Pagination } from "@mantine/core";
 import { useState } from "react";
+import { useMediaQuery } from "@mantine/hooks";
 
 export const Favorites = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -21,6 +22,7 @@ export const Favorites = () => {
     firstVacancyIndex,
     lastVacancyIndex
   );
+  const largeScreen = useMediaQuery("(min-width: 440px)");
   return (
     <main>
       {parseFavoriteVacancies.length === 0 || !parseFavoriteVacancies ? (
@@ -54,6 +56,7 @@ export const Favorites = () => {
           {parseFavoriteVacancies.length > 4 && (
             <div className={styles.center}>
               <Pagination
+                size={largeScreen ? "md" : "xs"}
                 value={currentPage}
                 onChange={setCurrentPage}
                 total={maxPage}

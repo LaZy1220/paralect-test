@@ -9,12 +9,14 @@
   border-radius: 12px;
   background-color: var(--white);
   padding: 24px;
-  padding-left: 48px;
+  ul,
+  ol {
+    padding-left: 12px;
+  }
 }
-.description {
-  p,
-  b {
-    font-weight: 700;
-    font-size: 20px;
+
+@media (max-width: 650px) {
+  .details-body {
+    font-size: 12px;
   }
 }

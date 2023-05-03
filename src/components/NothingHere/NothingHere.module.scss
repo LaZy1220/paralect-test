@@ -22,3 +22,18 @@
     color: var(--light-blue);
   }
 }
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 51px;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 340px) {
+  .title {
+    font-size: 18px;
+  }
+}
