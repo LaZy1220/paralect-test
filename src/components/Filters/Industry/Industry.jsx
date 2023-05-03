@@ -1,5 +1,5 @@
 import { Select } from "@mantine/core";
-import BigArrow from "../../../assets/big-arrow.svg";
+import BigArrow from "/assets/big-arrow.svg";
 import styles from "../Filters.module.scss";
 import cn from "classnames";
 import { getCatalogues } from "../../../services/getCatalogues";

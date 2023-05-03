@@ -1,5 +1,5 @@
 import styles from "./Filters.module.scss";
-import Cross from "../../assets/Cross.svg";
+import Cross from "/assets/cross.svg";
 import { Industry } from "./Industry/Industry";
 import { Salary } from "./Salary/Salary";
 import { resetFilters, checkIsEmpty } from "../../utils/filters";

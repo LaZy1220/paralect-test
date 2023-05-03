@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Logo from "../../assets/logo.svg";
+import Logo from "/assets/logo.svg";
 import styles from "./Header.module.scss";
 import { Link, useLocation } from "react-router-dom";
 import cn from "classnames";

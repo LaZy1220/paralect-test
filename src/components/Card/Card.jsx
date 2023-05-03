@@ -1,5 +1,5 @@
 import { checkPayment } from "../../utils/checkPayment";
-import Location from "../../assets/location.svg";
+import Location from "/assets/location.svg";
 import CustomStar from "../CustomStar";
 import cn from "classnames";
 import styles from "./Card.module.scss";

@@ -1,5 +1,5 @@
 import styles from "./Search.module.scss";
-import SearchImg from "../../assets/search.svg";
+import SearchImg from "/assets/search.svg";
 import cn from "classnames";
 import { getVacancies } from "../../services/getVacancies";
 
