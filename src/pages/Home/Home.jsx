@@ -6,17 +6,25 @@ import { useEffect, useState } from "react";
 import { getVacancies } from "../../services/getVacancies";
 import { VacanciesList } from "../../components/Vacancies/VacanciesList";
 
-export const Home = ({ currentPage, setCurrentPage }) => {
+export const Home = ({
+  industry,
+  setIndustry,
+  salaryFrom,
+  setSalaryFrom,
+  salaryTo,
+  setSalaryTo,
+  search,
+  setSearch,
+  currentPage,
+  setCurrentPage,
+  isFiltered,
+  setIsFiltered,
+  isSearched,
+  setIsSearched,
+}) => {
   const [vacancies, setVacancies] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const [industry, setIndustry] = useState("");
-  const [salaryFrom, setSalaryFrom] = useState("");
-  const [salaryTo, setSalaryTo] = useState("");
-  const [search, setSearch] = useState("");
-
-  const [isFiltered, setIsFiltered] = useState(false);
-  const [isSearched, setIsSearched] = useState(false);
   useEffect(() => {
     setIsLoading(true);
     getVacancies(

@@ -8,6 +8,14 @@ import { MantineProvider } from "@mantine/core";
 
 export const App = () => {
   const [currentPage, setCurrentPage] = useState(1);
+
+  const [industry, setIndustry] = useState("");
+  const [salaryFrom, setSalaryFrom] = useState("");
+  const [salaryTo, setSalaryTo] = useState("");
+  const [search, setSearch] = useState("");
+
+  const [isFiltered, setIsFiltered] = useState(false);
+  const [isSearched, setIsSearched] = useState(false);
   return (
     <Layout>
       <MantineProvider
@@ -25,7 +33,22 @@ export const App = () => {
           <Route
             path="/"
             element={
-              <Home currentPage={currentPage} setCurrentPage={setCurrentPage} />
+              <Home
+                industry={industry}
+                setIndustry={setIndustry}
+                salaryFrom={salaryFrom}
+                setSalaryFrom={setSalaryFrom}
+                salaryTo={salaryTo}
+                setSalaryTo={setSalaryTo}
+                search={search}
+                setSearch={setSearch}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+                isFiltered={isFiltered}
+                setIsFiltered={setIsFiltered}
+                isSearched={isSearched}
+                setIsSearched={setIsSearched}
+              />
             }
           />
           <Route path="/favorites" element={<Favorites />} />
