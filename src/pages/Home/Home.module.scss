@@ -1,3 +1,7 @@
+.home {
+  max-width: 1440px;
+  margin: 0 auto;
+}
 .full-width {
   gap: 16px;
   display: flex;
@@ -8,9 +12,9 @@
   display: flex;
 }
 .wrapper {
-  padding: 40px 13.3% 51px 13.3%;
+  padding: 40px 162px 51px 162px;
 }
-@media (max-width: 1100px) {
+@media (max-width: 1150px) {
   .flex {
     align-items: center;
     flex-direction: column;

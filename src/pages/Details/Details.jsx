@@ -25,12 +25,12 @@ export const Details = () => {
   }, []);
 
   return (
-    <main>
+    <main className={styles.details}>
       <Container>
         {isLoading ? (
           <LoaderSpinner />
         ) : (
-          <div className={styles.details}>
+          <div className={styles.flex}>
             <Card vacancy={vacancy} checkIsFavorite={isFavorite} />
             <div className={styles["details-body"]}>
               <div

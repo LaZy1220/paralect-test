@@ -1,4 +1,8 @@
 .details {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.flex {
   display: flex;
   flex-direction: column;
   gap: 20px;

@@ -24,7 +24,7 @@ export const Favorites = () => {
   );
   const largeScreen = useMediaQuery("(min-width: 440px)");
   return (
-    <main>
+    <main className={styles.favorites}>
       {parseFavoriteVacancies.length === 0 || !parseFavoriteVacancies ? (
         <div
           className={cn(styles.favorites, {

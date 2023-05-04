@@ -1,5 +1,4 @@
 import styles from "./Home.module.scss";
-import { Container } from "../../components/Container/Container";
 import { Filters } from "../../components/Filters/Filters";
 import { Search } from "../../components/Search/Search";
 import { useEffect, useState } from "react";
