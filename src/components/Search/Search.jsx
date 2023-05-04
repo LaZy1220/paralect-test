@@ -2,6 +2,7 @@ import styles from "./Search.module.scss";
 import SearchImg from "/assets/search.svg";
 import cn from "classnames";
 import { getVacancies } from "../../services/getVacancies";
+import { useState } from "react";
 
 export const Search = ({
   search,
@@ -15,13 +16,15 @@ export const Search = ({
   setCurrentPage,
   setIsSearched,
 }) => {
+  const [praveSearch, setIsPraveSearch] = useState("");
   const getRequest = () => {
-    if (search.trim() === "") {
+    if (praveSearch === search) {
       return;
     }
     setIsLoading(true);
     setCurrentPage(1);
     setIsSearched(true);
+    setIsPraveSearch(search);
     getVacancies(search, salaryFrom, salaryTo, industry, isFiltered, true).then(
       (data) => {
         setVacancies(data);
